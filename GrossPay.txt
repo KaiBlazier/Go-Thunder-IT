@@ -1,0 +1,17 @@
+BEGIN
+	INPUT companyID
+  INPUT hoursWorked
+  INPUT hourlyRate
+
+  IF hoursWorked <= 40 Then
+    grosspay = hoursWorked * hourlyRate
+  Else
+    regularPay = 40 * hoursWorked
+    overtimeHours = hoursWorked - 40
+    overtimePay = overtimeHours * (hourlyRate * 1.5)
+    grossPay = regularPay + overtimePay
+  ENDIF
+
+OUTPUT "Company ID: ", companyID
+OUTPUT "Gross Pay: ", grossPay
+END
